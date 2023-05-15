@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --background-bg: 0, 2, 18;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mi-auto w-[min(100%_-_30px,_1240px)];
+  }
+}
+
+@layer utilities {
+  .mi-auto {
+    margin-inline: auto;
+  }
+}

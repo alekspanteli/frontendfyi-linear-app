@@ -6,6 +6,20 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-roboto-mono)'],
+      },
+      colors: {
+        background: "rgb(var(--background-bg))"
+      },
+      fontSize: {
+        'size-0': 'clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)',
+      },
+    },
   },
-  plugins: [],
+  corePlugins: {
+    container: false,
+  }
 }

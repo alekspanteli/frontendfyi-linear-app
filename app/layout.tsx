@@ -1,10 +1,18 @@
 import './globals.css'
-import { Roboto } from 'next/font/google'
-
-const roboto = Roboto({ 
+import { Inter, Roboto_Mono } from 'next/font/google';
+ 
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
-})
+  display: 'swap',
+  variable: '--font-inter',
+});
+ 
+const roboto_mono = Roboto_Mono({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto-mono',
+});
+ 
 
 export const metadata = {
   title: 'Create Next App',
@@ -17,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>{children}</body>
+    <html lang="en" className={`${inter.variable} ${roboto_mono.variable} bg-background`}>
+      <body>{children}</body>
     </html>
   )
 }
