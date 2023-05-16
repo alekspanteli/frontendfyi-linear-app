@@ -1,4 +1,5 @@
 import { Container } from "@/components/container";
+import { Hero } from "@/components/hero";
 
 export const metadata = {
   title: "Test",
@@ -7,12 +8,23 @@ export const metadata = {
 
 export default function Homepage() {
   return (
-    <Container data-test="test">
-      <div className="text-white">
-        <header>header</header>
-        <main>main content</main>
-        <footer>footer</footer>
-      </div>
-    </Container>
+    <>
+      <header>
+        <Container>header</Container>
+      </header>
+      <main>
+        <Container>
+          <Hero
+            title="Linear is a better way
+to build products"
+            subtitle="Meet the new standard for modern software development.
+Streamline issues, sprints, and product roadmaps."
+          />
+        </Container>
+      </main>
+      <footer>
+        <Container>footer</Container>
+      </footer>
+    </>
   );
 }

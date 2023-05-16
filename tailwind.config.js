@@ -21,7 +21,8 @@ module.exports = {
     fontSize: {
       // "size-0": "clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)",
       // "size-1": ["clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)", "1.1"],
-      "lg": px(16),
+      "md": px(16),
+      "lg": px(22),
       "5xl": px(80),
     },
   },
