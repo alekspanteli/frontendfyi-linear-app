@@ -7,7 +7,7 @@ interface HeroElementProps {
 }
 
 export const HeroTitle = ({ children }: HeroElementProps) => {
-  return <h1 className="text-5xl/none my-5">{children}</h1>;
+  return <h1 className="text-5xl/none [margin-block:theme(spacing.5)]">{children}</h1>;
 };
 
 export const HeroSubtitle = ({ children }: HeroElementProps) => {
