@@ -1,5 +1,5 @@
 import { Container } from "@/components/container";
-import { Hero } from "@/components/hero";
+import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 
 export const metadata = {
   title: "Test",
@@ -14,12 +14,13 @@ export default function Homepage() {
       </header>
       <main>
         <Container>
-          <Hero
-            title="Linear is a better way
-to build products"
-            subtitle="Meet the new standard for modern software development.
-Streamline issues, sprints, and product roadmaps."
-          />
+          <Hero>
+            <HeroTitle>Linear is a better way to build products</HeroTitle>
+            <HeroSubtitle>
+              Meet the new standard for modern software development. Streamline
+              issues, sprints, and product roadmaps.
+            </HeroSubtitle>
+          </Hero>
         </Container>
       </main>
       <footer>

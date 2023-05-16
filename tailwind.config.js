@@ -25,8 +25,17 @@ module.exports = {
       "lg": px(22),
       "5xl": px(80),
     },
+    spacing: {
+      0: "0",
+      1: "px(14)",
+      2: "px(0)",
+      3: "px(12)",
+      4: "px(16)",
+      5: "px(24)",
+      6: "px(32)",
+      7: "px(40)",
+    },
   },
   corePlugins: {
-    container: false,
   },
 };
