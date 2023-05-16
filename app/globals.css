@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   :root {
    
   }
-}
+} */
 
 @layer components {
-  .container {
-    @apply mi-auto w-[min(100%_-_30px,_1240px)];
-  }
+  /* .container {
+    @apply mi-auto w-[min(100%_-_30px,_1200px)];
+  } */
 }
 
 @layer utilities {
