@@ -3,10 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-  /* :root {
-    --background-bg: 0, 2, 18;
-    --white: 255, 255, 255;
-  } */
+  :root {
+    /* --background-bg: 0, 2, 18; */
+    /* --white: rgb(255, 255, 255); */
+  }
 }
 
 @layer components {

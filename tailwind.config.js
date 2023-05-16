@@ -15,8 +15,8 @@ module.exports = {
       mono: ["var(--font-roboto-mono)"],
     },
     colors: {
-      background: "rgb(0 2 18 / .5)",
-      white: "rgb(255 255 255 / .5)",
+      background: "rgb(0 2 18)",
+      white: "rgb(255 255 255)",
     },
     fontSize: {
       // "size-0": "clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)",
