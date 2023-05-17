@@ -2,20 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @layer base {
-  :root {
-   
-  }
-} */
+@layer base {
+}
 
 @layer components {
-  /* .container {
-    @apply mi-auto w-[min(100%_-_30px,_1200px)];
-  } */
 }
 
 @layer utilities {
-  .mi-auto {
-    margin-inline: auto;
-  }
 }
