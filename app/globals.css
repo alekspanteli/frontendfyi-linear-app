@@ -9,4 +9,7 @@
 }
 
 @layer utilities {
+    .mi-auto{
+        margin-inline: auto;
+    }
 }
