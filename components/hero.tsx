@@ -8,7 +8,7 @@ interface HeroElementProps {
 
 export const HeroTitle = ({ children }: HeroElementProps) => {
   return (
-    <h1 className="mi-auto text-5xl/none [margin-block:--space-0] [max-inline-size:17ch]">
+    <h1 className="m-inline-auto text-5xl/none m-block-[--space-6] max-inline-size-[17ch]">
       {children}
     </h1>
   );

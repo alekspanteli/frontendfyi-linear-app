@@ -29,6 +29,7 @@ export const theme = {
     "5xl": px(80),
   },
   spacing: {
+    auto: "auto",
     0: "0",
     1: px(4),
     2: px(8),
@@ -45,6 +46,31 @@ export const theme = {
   },
 };
 export const plugins = [
+  plugin(function ({ matchUtilities, theme }) {
+    const utilities = {
+      "max-inline-size": (value) => ({
+        maxInlineSize: value,
+      }),
+      "inline-size": (value) => ({
+        inlineSize: value,
+      }),
+      "m-inline": (value) => ({
+        marginInline: value,
+      }),
+      "m-block": (value) => ({
+        marginBlock: value,
+      }),
+    };
+
+    Object.keys(utilities).forEach((utility) => {
+      matchUtilities(
+        {
+          [utility]: utilities[utility],
+        },
+        { values: theme("spacing") }
+      );
+    });
+  }),
   plugin(function ({ addComponents, config }) {
     let result = "";
 
