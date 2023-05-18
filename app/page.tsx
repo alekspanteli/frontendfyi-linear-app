@@ -25,6 +25,7 @@ export default function Homepage() {
             <Image
               src={heroImg}
               alt="Picture of the author"
+              priority
             />
           </Hero>
         </Container>
