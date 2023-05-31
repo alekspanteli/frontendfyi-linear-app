@@ -15,7 +15,7 @@ export const HeroTitle = ({ children }: HeroElementProps) => {
 };
 
 export const HeroSubtitle = ({ children }: HeroElementProps) => {
-  return <p className="text-lg/[1.3]">{children}</p>;
+  return <p className="text-lg/[1.3] mb-[--space-12] text-balance max-w-[45ch] mx-auto">{children}</p>;
 };
 
 export const Hero = ({ children }: HeroProps) => {

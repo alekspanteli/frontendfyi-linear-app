@@ -12,4 +12,8 @@
   /* .mi-auto{
         margin-inline: auto;
     } */
+    .text-balance{
+      text-wrap: balance;
+    }
+    
 }

@@ -1,9 +1,10 @@
-export const Logo = () => (
+export const Logo = ({ className }: { className?: string }) => (
   <svg
     height="18"
     viewBox="0 0 400 100"
     fill="currentColor"
     aria-label="Linear Logotype"
+    className={className}
   >
     <path
       fill-rule="evenodd"
