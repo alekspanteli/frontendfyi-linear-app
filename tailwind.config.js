@@ -22,8 +22,6 @@ export const theme = {
     white: "rgb(255 255 255)",
   },
   fontSize: {
-    // "size-0": "clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)",
-    // "size-1": ["clamp(2.75rem, 1.97rem + 3.91vw, 5.00rem)", "1.1"],
     md: px(16),
     lg: px(22),
     "5xl": px(80),
@@ -46,31 +44,6 @@ export const theme = {
   },
 };
 export const plugins = [
-  plugin(function ({ matchUtilities, theme }) {
-    const utilities = {
-      "max-inline-size": (value) => ({
-        maxInlineSize: value,
-      }),
-      "inline-size": (value) => ({
-        inlineSize: value,
-      }),
-      "m-inline": (value) => ({
-        marginInline: value,
-      }),
-      "m-block": (value) => ({
-        marginBlock: value,
-      }),
-    };
-
-    Object.keys(utilities).forEach((utility) => {
-      matchUtilities(
-        {
-          [utility]: utilities[utility],
-        },
-        { values: theme("spacing") }
-      );
-    });
-  }),
   plugin(function ({ addComponents, config }) {
     let result = "";
 
