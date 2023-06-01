@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  :root{
+    --navbar-height: var(--space-12);
+  }
 }
 
 @layer components {

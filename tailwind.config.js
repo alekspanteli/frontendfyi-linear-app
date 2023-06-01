@@ -22,6 +22,7 @@ export const theme = {
     white: "rgb(255 255 255)",
   },
   fontSize: {
+    sm: px(14),
     md: px(16),
     lg: px(22),
     "5xl": px(80),

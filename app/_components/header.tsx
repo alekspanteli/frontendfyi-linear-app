@@ -5,13 +5,13 @@ import { Logo } from "./icons/logo";
 export const Header = () => {
   return (
     <header>
-      <Container className="flex">
+      <Container className="flex gap-6 items-center h-[--navbar-height]">
         <Link href="/">
           {" "}
           <Logo />
         </Link>
-        <nav>
-          <ul>
+        <nav className="h-full">
+          <ul className="flex gap-6 items-center h-full [&_a]:text-sm">
             <li><Link href="#">Features</Link></li>
             <li><Link href="#">Method</Link></li>
             <li><Link href="#">Customers</Link></li>
