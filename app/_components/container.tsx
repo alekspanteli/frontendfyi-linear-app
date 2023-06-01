@@ -1,3 +1,20 @@
-export const Container = ({ children }: { children: React.ReactNode }) => {
-  return <div className="mx-auto w-[min(100vw-30px,1200px)]">{children}</div>;
+import classNames from "classnames";
+
+export const Container = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={classNames(
+        "mx-auto w-[min(100vw-30px,1200px)] pt-10",
+        className
+      )}
+    >
+      {children}
+    </div>
+  );
 };
