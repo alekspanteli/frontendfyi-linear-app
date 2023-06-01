@@ -4,7 +4,7 @@ import { Logo } from "./icons/logo";
 
 export const Header = () => {
   return (
-    <header>
+    <header className="fixed top-0 left-0 w-full">
       <Container className="flex gap-6 items-center h-[--navbar-height]">
         <Link href="/">
           {" "}

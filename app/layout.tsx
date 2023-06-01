@@ -32,7 +32,7 @@ export default function RootLayout({
     >
       <body>
         <Header />
-        <main>{children}</main>
+        <main className="pt-[--navbar-height]">{children}</main>
         <footer>
           <Container>footer</Container>
         </footer>

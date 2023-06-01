@@ -20,6 +20,7 @@ export const theme = {
   colors: {
     background: "rgb(0 2 18)",
     white: "rgb(255 255 255)",
+    red: "red",
   },
   fontSize: {
     sm: px(14),
