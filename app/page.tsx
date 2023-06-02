@@ -1,5 +1,5 @@
-import { Container } from "./_components/container";
-import { Hero, HeroSubtitle, HeroTitle } from "./_components/hero";
+import { Container } from "@/components/container";
+import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 import Image from "next/image";
 import heroImg from "@/public/hero.webp";
 

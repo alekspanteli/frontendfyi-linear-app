@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Container } from "../container";
-import { Logo } from "../icons/logo";
+import { Container } from "@/components/container";
+import { Logo } from "@/icons/logo";
 import styles from "./header.module.css";
 import classNames from "classnames";
 
