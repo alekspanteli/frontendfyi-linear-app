@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Inter, Roboto_Mono } from "next/font/google";
 import { Container } from "./_components/container";
-import { Header } from "./_components/header";
+import { Header } from "./_components/header/header";
 
 const inter = Inter({
   subsets: ["latin"],

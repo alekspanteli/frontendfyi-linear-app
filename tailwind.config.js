@@ -21,6 +21,7 @@ export const theme = {
     background: "rgb(0 2 18)",
     white: "rgb(255 255 255)",
     red: "red",
+    "white-a08": "rgb(255 255 255 / .08)",
   },
   fontSize: {
     sm: px(14),
