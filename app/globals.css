@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root{
+  :root {
     --navbar-height: var(--space-12);
   }
 }
@@ -12,11 +12,4 @@
 }
 
 @layer utilities {
-  /* .mi-auto{
-        margin-inline: auto;
-    } */
-    /* .text-balance{
-      text-wrap: balance;
-    } */
-    
 }

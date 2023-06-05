@@ -10,7 +10,7 @@ export const Container = ({
   return (
     <div
       className={classNames(
-        "mx-auto w-[min(100vw-30px,1200px)]",
+        "w-[min(100vw-30px,1200px)] [margin-inline:auto]",
         className
       )}
     >

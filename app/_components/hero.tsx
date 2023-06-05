@@ -8,14 +8,18 @@ interface HeroElementProps {
 
 export const HeroTitle = ({ children }: HeroElementProps) => {
   return (
-    <h1 className="mx-auto text-5xl/none my-[--space-6] max-w-[17ch]">
+    <h1 className="text-balance mx-auto my-[--space-6] text-5xl/none">
       {children}
     </h1>
   );
 };
 
 export const HeroSubtitle = ({ children }: HeroElementProps) => {
-  return <p className="text-lg/[1.3] mb-[--space-12] text-balance max-w-[45ch] mx-auto">{children}</p>;
+  return (
+    <p className="text-balance mx-auto mb-[--space-12] max-w-[70ch] text-lg/[1.3]">
+      {children}
+    </p>
+  );
 };
 
 export const Hero = ({ children }: HeroProps) => {
