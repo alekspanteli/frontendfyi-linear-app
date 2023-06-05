@@ -1,7 +1,7 @@
 import { Container } from "@/components/container";
 import { Hero, HeroSubtitle, HeroTitle } from "@/components/hero";
 import Image from "next/image";
-import heroImg from "@/public/hero.webp";
+import heroImg from "@/images/hero.webp";
 
 export const metadata = {
   title: "Linear App",

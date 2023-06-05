@@ -1,18 +1,11 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Logo } from "@/icons/logo";
-import styles from "./header.module.css";
-import classNames from "classnames";
 
 export const Header = () => {
   return (
     <header className="fixed left-0 top-0 w-full">
-      <Container
-        className={classNames(
-          "relative flex h-[--navbar-height] items-center gap-6",
-          styles.header
-        )}
-      >
+      <Container className="relative flex h-[--navbar-height] items-center gap-6 border-b border-white-a08">
         <Link href="/">
           <Logo />
         </Link>
