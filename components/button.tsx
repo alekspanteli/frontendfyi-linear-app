@@ -6,7 +6,7 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
   href: string;
 }
 
-const buttonClasses = cva("", {
+const buttonClasses = cva("rounded-full", {
   variants: {
     variant: {
       primary: ["bg-primary-gradient"],
@@ -14,9 +14,9 @@ const buttonClasses = cva("", {
       tertiary: [""],
     },
     size: {
-      small: ["text-xs"],
-      medium: ["text-sm"],
-      large: ["text-md"],
+      small: ["text-xs px-3"],
+      medium: ["text-sm px-4"],
+      large: ["text-md px-6"],
     },
   },
   // compoundVariants: [
@@ -28,10 +28,10 @@ const buttonClasses = cva("", {
   //     // className: "uppercase"
   //   },
   // ],
-  // defaultVariants: {
-  //   intent: "primary",
-  //   size: "medium",
-  // },
+  defaultVariants: {
+    variant: "primary",
+    size: "medium",
+  },
 });
 
 export const Button = ({ children, href, variant, size }: ButtonProps) => (
