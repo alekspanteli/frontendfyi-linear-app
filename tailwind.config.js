@@ -1,3 +1,5 @@
+/** @type {import('tailwindcss').Config} */
+
 import plugin from "tailwindcss/plugin";
 import { parse } from "postcss";
 import { objectify } from "postcss-js";
@@ -7,16 +9,16 @@ function px(pixels) {
 }
 
 function hexToRgb(hex) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
-    ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
+    ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(
         result[3],
         16
-      )}`
+      )})`
     : null;
 }
 
-export default {
+module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -33,7 +35,7 @@ export default {
     colors: {
       background: "rgb(0 2 18)",
       white: "rgb(255 255 255)",
-      red: "red",
+      red: "#ff0000",
       "white-a08": "rgb(255 255 255 / .08)",
       accent: {
         300: "rgb(103 63 215)",
@@ -43,7 +45,7 @@ export default {
     },
     backgroundImage: {
       "primary-gradient":
-        "linear-gradient(92.88deg, var(--color-accent-300) 9.16%, var(--color-accent-500) 43.89%, var(--color-accent-700) 64.72%)",
+        "linear-gradient(92.88deg, var(--color-accent-700) 9.16%, var(--color-accent-500) 43.89%, var(--color-accent-300) 64.72%)",
     },
     fontSize: {
       xs: px(13),
@@ -102,7 +104,11 @@ export default {
               result += `--${prefix}-${groupKey}-${token}: ${convertedValue};`;
             });
           } else {
-            result += `--${prefix}-${groupKey}: ${groupValue};`;
+            const convertedValue =
+              typeof groupValue === "string" && groupValue.startsWith("#")
+                ? hexToRgb(groupValue)
+                : groupValue;
+            result += `--${prefix}-${groupKey}: ${convertedValue};`;
           }
         });
       });
