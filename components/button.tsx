@@ -9,7 +9,7 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
 const buttonClasses = cva("", {
   variants: {
     variant: {
-      primary: [""],
+      primary: ["bg-primary-gradient"],
       secondary: [""],
       tertiary: [""],
     },
@@ -35,7 +35,7 @@ const buttonClasses = cva("", {
 });
 
 export const Button = ({ children, href, variant, size }: ButtonProps) => (
-  <Link className={buttonClasses({variant, size})} href={href}>
+  <Link className={buttonClasses({ variant, size })} href={href}>
     {children}
   </Link>
 );
