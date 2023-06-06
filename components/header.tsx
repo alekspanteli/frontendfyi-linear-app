@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/container";
+import { Button } from "@/components/button";
 import { Logo } from "@/icons/logo";
 
 export const Header = () => {
@@ -40,7 +41,7 @@ export const Header = () => {
               <Link href="#">Login</Link>
             </li>
             <li>
-              <Link href="#">Signup</Link>
+              <Button href="#">Signup</Button>
             </li>
           </ul>
         </nav>
