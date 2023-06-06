@@ -5,11 +5,11 @@ import { Logo } from "@/icons/logo";
 export const Header = () => {
   return (
     <header className="fixed left-0 top-0 w-full">
-      <Container className="relative flex h-[--navbar-height] items-center gap-6 border-b border-white-a08">
+      <Container className="relative flex h-[--_navbar-height] items-center gap-6 border-b border-white-a08">
         <Link href="/">
           <Logo />
         </Link>
-        <nav className="h-full">
+        <nav className="h-full flex-1">
           <ul
             role="list"
             aria-label="Navigation"
@@ -35,6 +35,12 @@ export const Header = () => {
             </li>
             <li>
               <Link href="#">Company </Link>
+            </li>
+            <li className="ml-auto">
+              <Link href="#">Login</Link>
+            </li>
+            <li>
+              <Link href="#">Signup</Link>
             </li>
           </ul>
         </nav>
