@@ -24,6 +24,7 @@ export const theme = {
     "white-a08": "rgb(255 255 255 / .08)",
   },
   fontSize: {
+    xs: px(13),
     sm: px(14),
     md: px(16),
     lg: px(22),

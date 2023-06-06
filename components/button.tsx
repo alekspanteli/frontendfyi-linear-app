@@ -12,11 +12,12 @@ const buttonClasses = cva("", {
       primary: [""],
       secondary: [""],
       tertiary: [""],
-    }
-    // size: {
-    //   small: ["text-sm", "py-1", "px-2"],
-    //   medium: ["text-base", "py-2", "px-4"],
-    // },
+    },
+    size: {
+      small: ["text-xs"],
+      medium: ["text-sm"],
+      large: ["text-md"],
+    },
   },
   // compoundVariants: [
   //   {
@@ -33,8 +34,8 @@ const buttonClasses = cva("", {
   // },
 });
 
-export const Button = ({ children, href, variant }: ButtonProps) => (
-  <Link className={buttonClasses({variant})} href={href}>
+export const Button = ({ children, href, variant, size }: ButtonProps) => (
+  <Link className={buttonClasses({variant, size})} href={href}>
     {children}
   </Link>
 );
