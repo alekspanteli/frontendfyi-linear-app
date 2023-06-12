@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --_navbar-height: var(--space-12);
+    --navbar-height: var(--space-12);
   }
 }
 
