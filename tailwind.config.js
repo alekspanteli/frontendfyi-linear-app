@@ -16,14 +16,13 @@ const themeConfig = {
       mono: ["var(--font-roboto-mono)"],
     },
     colors: {
-      background: "rgb(0 2 18)",
-      white: "rgb(255 255 255)",
-      red: "#ff0000",
-      "white-a08": "rgb(255 255 255 / .08)",
+      background: "rgb(var(--background))",
+      white: "rgb(var(--white))",
+      "white-a08": "rgb(var(--white) / .08)",
       accent: {
-        300: "rgb(103 63 215)",
-        500: "rgb(86 67 204)",
-        700: "rgb(69 94 181)",
+        300: "rgb(var(--accent-300))",
+        500: "rgb(var(--accent-500))",
+        700: "rgb(var(--accent-700))",
       },
     },
     backgroundImage: {

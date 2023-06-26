@@ -5,6 +5,11 @@
 @layer base {
   :root {
     --navbar-height: theme(spacing.12);
+    --background: 0 2 18;
+    --white: 255 255 255;
+    --accent-300: 103 63 215;
+    --accent-500: 86 67 204;
+    --accent-700: 69 94 181;
   }
 }
 
