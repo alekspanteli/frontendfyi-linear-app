@@ -2,16 +2,6 @@ function px(pixels) {
   return `${pixels / 16}rem`;
 }
 
-function hexToRgba(hex, alpha) {
-  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-  return result
-    ? `rgb(${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
-        result[3],
-        16
-      )} / ${alpha})`
-    : null;
-}
-
 const themeConfig = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -64,42 +54,7 @@ const themeConfig = {
       12: px(48),
     },
   },
-  plugins: [addVariablesForColors],
+  plugins: [],
 };
-
-function addVariablesForColors({ addBase, theme }) {
-  let allColors = theme("colors");
-  let allSpacing = theme("spacing");
-  let allFontSize = theme("fontSize");
-
-  let newVars = {
-    ...Object.fromEntries(
-      Object.entries(allColors).map(([key, val]) => [
-        `--${key}`,
-        typeof val === "string"
-          ? val.startsWith("#")
-            ? hexToRgba(val, 1)
-            : val
-          : hexToRgba(val[500], 1),
-      ])
-    ),
-    ...Object.fromEntries(
-      Object.entries(allSpacing).map(([key, val]) => [
-        `--spacing-${key}`,
-        val,
-      ])
-    ),
-    ...Object.fromEntries(
-      Object.entries(allFontSize).map(([key, val]) => [
-        `--font-size-${key}`,
-        val,
-      ])
-    ),
-  };
-
-  addBase({
-    ":root": newVars,
-  });
-}
 
 export default themeConfig;
