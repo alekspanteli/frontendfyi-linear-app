@@ -1,22 +1,21 @@
-/** @type {import('tailwindcss').Config} */
 
-import plugin from "tailwindcss/plugin";
-import { parse } from "postcss";
-import { objectify } from "postcss-js";
+const flattenColorPalette =
+  require("tailwindcss/lib/util/flattenColorPalette").default;
 
 function px(pixels) {
   return `${pixels / 16}rem`;
 }
 
 function hexToRgb(hex) {
-  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
-    ? `rgb(${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(
+    ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
         result[3],
         16
-      )})`
+      )}`
     : null;
 }
+
 
 module.exports = {
   content: [
@@ -71,51 +70,19 @@ module.exports = {
       12: px(48),
     },
   },
-  plugins: [
-    plugin(function ({ addComponents, config }) {
-      let result = "";
-
-      const currentConfig = config();
-
-      const groups = [
-        { key: "colors", prefix: "color" },
-        { key: "spacing", prefix: "space" },
-        { key: "fontSize", prefix: "size" },
-      ];
-
-      groups.forEach(({ key, prefix }) => {
-        const group = currentConfig.theme[key];
-
-        if (!group) {
-          return;
-        }
-
-        Object.keys(group).forEach((groupKey) => {
-          const groupValue = group[groupKey];
-
-          // Check if the current value is an object with nested tokens
-          if (typeof groupValue === "object") {
-            Object.keys(groupValue).forEach((token) => {
-              const tokenValue = groupValue[token];
-              const convertedValue =
-                typeof tokenValue === "string" && tokenValue.startsWith("#")
-                  ? hexToRgb(tokenValue)
-                  : tokenValue;
-              result += `--${prefix}-${groupKey}-${token}: ${convertedValue};`;
-            });
-          } else {
-            const convertedValue =
-              typeof groupValue === "string" && groupValue.startsWith("#")
-                ? hexToRgb(groupValue)
-                : groupValue;
-            result += `--${prefix}-${groupKey}: ${convertedValue};`;
-          }
-        });
-      });
-
-      addComponents({
-        ":root": objectify(parse(result)),
-      });
-    }),
-  ],
+  plugins: [addVariablesForColors],
 };
+
+
+function addVariablesForColors({ addBase, theme }) {
+  let allColors = flattenColorPalette(theme("colors"));
+  let newVars = Object.fromEntries(
+    Object.entries(allColors).map(([key, val]) => [`--${key}`, hexToRgb(val)])
+    // Object.entries(allColors).map(([key, val]) => [`--${key}`, val]) // hex
+  );
+
+  addBase({
+    ":root": newVars,
+  });
+}
+
