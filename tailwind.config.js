@@ -1,28 +1,22 @@
-
-const flattenColorPalette =
-  require("tailwindcss/lib/util/flattenColorPalette").default;
-
 function px(pixels) {
   return `${pixels / 16}rem`;
 }
 
-function hexToRgb(hex) {
+function hexToRgba(hex, alpha) {
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
   return result
-    ? `${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
+    ? `rgb(${parseInt(result[1], 16)} ${parseInt(result[2], 16)} ${parseInt(
         result[3],
         16
-      )}`
+      )} / ${alpha})`
     : null;
 }
 
-
-module.exports = {
+const themeConfig = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
     // Or if using `src` directory:
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -73,16 +67,39 @@ module.exports = {
   plugins: [addVariablesForColors],
 };
 
-
 function addVariablesForColors({ addBase, theme }) {
-  let allColors = flattenColorPalette(theme("colors"));
-  let newVars = Object.fromEntries(
-    Object.entries(allColors).map(([key, val]) => [`--${key}`, hexToRgb(val)])
-    // Object.entries(allColors).map(([key, val]) => [`--${key}`, val]) // hex
-  );
+  let allColors = theme("colors");
+  let allSpacing = theme("spacing");
+  let allFontSize = theme("fontSize");
+
+  let newVars = {
+    ...Object.fromEntries(
+      Object.entries(allColors).map(([key, val]) => [
+        `--${key}`,
+        typeof val === "string"
+          ? val.startsWith("#")
+            ? hexToRgba(val, 1)
+            : val
+          : hexToRgba(val[500], 1),
+      ])
+    ),
+    ...Object.fromEntries(
+      Object.entries(allSpacing).map(([key, val]) => [
+        `--spacing-${key}`,
+        val,
+      ])
+    ),
+    ...Object.fromEntries(
+      Object.entries(allFontSize).map(([key, val]) => [
+        `--font-size-${key}`,
+        val,
+      ])
+    ),
+  };
 
   addBase({
     ":root": newVars,
   });
 }
 
+export default themeConfig;
