@@ -44,7 +44,7 @@ module.exports = {
     },
     backgroundImage: {
       "primary-gradient":
-        "linear-gradient(92.88deg, var(--color-accent-700) 9.16%, var(--color-accent-500) 43.89%, var(--color-accent-300) 64.72%)",
+        "linear-gradient(92.88deg, theme(colors.accent.700) 9.16%, theme(colors.accent.500) 43.89%, theme(colors.accent.300) 64.72%)",
     },
     fontSize: {
       xs: px(13),
