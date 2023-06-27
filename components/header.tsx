@@ -41,7 +41,7 @@ export const Header = () => {
               <Link href="#">Login</Link>
             </li>
             <li>
-              <Button size="medium" href="#">
+              <Button href="#">
                 Signup
               </Button>
             </li>

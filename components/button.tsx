@@ -6,7 +6,7 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
   href: string;
 }
 
-const buttonClasses = cva("rounded-full", {
+const buttonClasses = cva("rounded-full inline-flex items-center", {
   variants: {
     variant: {
       primary: ["bg-primary-gradient"],
@@ -14,9 +14,9 @@ const buttonClasses = cva("rounded-full", {
       tertiary: [""],
     },
     size: {
-      small: ["text-xs px-3"],
-      medium: ["text-sm px-4"],
-      large: ["text-md px-6"],
+      small: ["text-xs px-3 py-1"],
+      medium: ["text-sm px-4 py-[0.45rem]"],
+      large: ["text-md px-6 py-4"],
     },
   },
   // compoundVariants: [
