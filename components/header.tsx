@@ -40,9 +40,11 @@ export const Header = () => {
           </ul>
         </nav>
         <div className="ml-auto flex h-full items-center gap-6">
-              <Link href="#" className="text-sm">Login</Link>
-              <Button href="#">Signup</Button>
-            </div>
+          <Link href="#" className="text-sm">
+            Login
+          </Link>
+          <Button href="#">Signup</Button>
+        </div>
       </Container>
     </header>
   );

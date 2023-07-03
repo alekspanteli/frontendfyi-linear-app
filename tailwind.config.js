@@ -53,6 +53,9 @@ const themeConfig = {
       11: px(44),
       12: px(48),
     },
+    boxShadow: {
+      'primary': 'rgb(80 63 205 / 0.5) 0px 1px 40px',
+    },
   },
   plugins: [],
 };

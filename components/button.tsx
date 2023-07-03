@@ -9,7 +9,7 @@ interface ButtonProps extends VariantProps<typeof buttonClasses> {
 const buttonClasses = cva("rounded-full inline-flex items-center", {
   variants: {
     variant: {
-      primary: ["bg-primary-gradient"],
+      primary: ["bg-primary-gradient hover:text-shadow hover:shadow-primary"],
       secondary: [""],
       tertiary: [""],
     },
