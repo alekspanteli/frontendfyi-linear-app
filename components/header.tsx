@@ -5,7 +5,7 @@ import { Logo } from "@/icons/logo";
 
 export const Header = () => {
   return (
-    <header className="fixed left-0 top-0 w-full">
+    <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
       <Container className="relative flex h-[--navbar-height] items-center gap-6 border-b border-white-a08">
         <Link href="/">
           <Logo />
@@ -14,7 +14,7 @@ export const Header = () => {
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full items-center gap-6 [&_a]:text-sm"
+            className="flex h-full items-center gap-6 [&_a]:text-sm [&_a:hover]:text-grey [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>
