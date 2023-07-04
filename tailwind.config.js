@@ -25,6 +25,8 @@ const themeConfig = {
         500: "rgb(var(--accent-500))",
         700: "rgb(var(--accent-700))",
       },
+      current: 'currentColor',
+      'text-inherit': "inherit",
     },
     backgroundImage: {
       "primary-gradient":
