@@ -28,7 +28,7 @@ export const Header = () => {
             <li>
               <Link href="#">Changelog</Link>
             </li>
-            <li>
+            <li className="bg-sky-700 hover:bg-sky-800 px-4 py-2 text-white sm:px-8 sm:py-3">
               <Link href="#">Integrations</Link>
             </li>
             <li>
@@ -38,9 +38,7 @@ export const Header = () => {
               <Link href="#">Company </Link>
             </li>
             <li className="ml-auto">
-              <Link href="#">
-                Login
-              </Link>
+              <Link href="#">Login</Link>
             </li>
             <li>
               <Button href="#">Signup</Button>
