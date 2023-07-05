@@ -22,7 +22,7 @@ export const Header = () => {
             <li>
               <Link href="#">Method</Link>
             </li>
-            <li>
+            <li className="hidden md:block">
               <Link href="#">Customers</Link>
             </li>
             <li>
