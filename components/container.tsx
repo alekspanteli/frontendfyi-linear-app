@@ -7,7 +7,7 @@ export const Container = ({
 }: {
   children: React.ReactNode;
   className?: string;
-}) => {
+} & React.ComponentProps<'div'>) => {
   return (
     <div
       className={classNames(
