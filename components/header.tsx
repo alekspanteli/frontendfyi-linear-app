@@ -14,7 +14,7 @@ export const Header = () => {
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:where(:hover)]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-md:hidden [&_a:where(:hover)]:text-grey [&_a]:text-sm [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>
