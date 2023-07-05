@@ -14,7 +14,7 @@ export const Header = () => {
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full items-center gap-6 [&_a:where(:hover)]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:where(:hover)]:text-grey [&_a]:text-sm [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>
@@ -22,13 +22,13 @@ export const Header = () => {
             <li>
               <Link href="#">Method</Link>
             </li>
-            <li className="hidden md:block">
+            <li>
               <Link href="#">Customers</Link>
             </li>
             <li>
               <Link href="#">Changelog</Link>
             </li>
-            <li className="bg-sky-700 hover:bg-sky-800 px-4 py-2 text-white sm:px-8 sm:py-3">
+            <li>
               <Link href="#">Integrations</Link>
             </li>
             <li>
