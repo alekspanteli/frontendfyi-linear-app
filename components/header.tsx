@@ -10,11 +10,11 @@ export const Header = () => {
         <Link href="/">
           <Logo />
         </Link>
-        <nav className="h-full flex-1">
+        <nav className="h-full flex-1 max-md:hidden">
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-md:hidden [&_a:where(:hover)]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>
@@ -37,14 +37,14 @@ export const Header = () => {
             <li>
               <Link href="#">Company </Link>
             </li>
-            <li className="ml-auto">
-              <Link href="#">Login</Link>
-            </li>
-            <li>
-              <Button href="#">Signup</Button>
-            </li>
           </ul>
         </nav>
+        <div className="ml-auto flex h-full items-center gap-5">
+          <Link href="#" className="text-sm transition-colors hover:text-grey">
+            Login
+          </Link>
+          <Button href="#">Signup</Button>
+        </div>
       </Container>
     </header>
   );
