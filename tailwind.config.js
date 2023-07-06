@@ -25,8 +25,9 @@ const themeConfig = {
         500: "rgb(var(--accent-500))",
         700: "rgb(var(--accent-700))",
       },
-      current: 'currentColor',
-      'text-inherit': "inherit",
+      current: "currentColor",
+      "text-inherit": "inherit",
+      transparent: "transparent",
     },
     backgroundImage: {
       "primary-gradient":
@@ -56,7 +57,7 @@ const themeConfig = {
       12: px(48),
     },
     boxShadow: {
-      'primary': 'rgb(80 63 205 / 0.5) 0px 1px 40px',
+      primary: "rgb(80 63 205 / 0.5) 0px 1px 40px",
     },
   },
   plugins: [],

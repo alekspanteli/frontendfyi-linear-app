@@ -19,7 +19,7 @@ export const Header = () => {
         </Link>
         <nav
           className={classNames(
-            "fixed left-[calc(-1*var(--gutter)/2)] top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-screen flex-1 overflow-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full",
+            "md:bg-transparent fixed left-[calc(-1*var(--gutter)/2)] top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-screen flex-1 overflow-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full",
             hamburgetMenuIsOpen ? "" : "hidden"
           )}
         >
