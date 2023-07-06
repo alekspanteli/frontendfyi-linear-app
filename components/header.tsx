@@ -5,7 +5,7 @@ import { Logo } from "@/icons/logo";
 
 export const Header = () => {
   return (
-    <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
+    <header className="fixed left-0 top-0 w-full ">
       <Container className="relative flex h-[--navbar-height] items-center gap-6 border-b border-white-a08">
         <Link href="/">
           <Logo />
@@ -19,7 +19,7 @@ export const Header = () => {
             <li>
               <Link href="#">Features</Link>
             </li>
-            <li>
+            <li className="bg-sky-700 hover:bg-sky-800 px-4 py-2 text-white sm:px-8 sm:py-3">
               <Link href="#">Method</Link>
             </li>
             <li>
