@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Logo } from "@/icons/logo";
+import { HamburgerIcon } from "./hamburger";
 
 export const Header = () => {
   return (
@@ -19,7 +20,7 @@ export const Header = () => {
             <li>
               <Link href="#">Features</Link>
             </li>
-            <li className="bg-sky-700 hover:bg-sky-800 px-4 py-2 text-white sm:px-8 sm:py-3">
+            <li>
               <Link href="#">Method</Link>
             </li>
             <li>
@@ -45,6 +46,10 @@ export const Header = () => {
           </Link>
           <Button href="#">Signup</Button>
         </div>
+
+        <button className="text-white">
+          <HamburgerIcon />
+        </button>
       </Container>
     </header>
   );
