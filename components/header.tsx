@@ -1,21 +1,32 @@
+"use client";
+
 import Link from "next/link";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Logo } from "@/icons/logo";
 import { HamburgerIcon } from "./hamburger";
+import { useState } from "react";
+import classNames from "classnames";
 
 export const Header = () => {
+  const [hamburgetMenuIsOpen, sethamburgetMenuIsOpen] = useState(false);
+
   return (
     <header className="fixed left-0 top-0 w-full ">
-      <Container className="relative flex h-[--navbar-height] items-center gap-6 border-b border-white-a08">
+      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08 backdrop-blur-[12px]">
         <Link href="/">
-          <Logo />
+          <Logo className="mr-6" />
         </Link>
-        <nav className="h-full flex-1 max-md:hidden">
+        <nav
+          className={classNames(
+            "fixed left-[calc(-1*var(--gutter)/2)] top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-screen flex-1 overflow-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full",
+            hamburgetMenuIsOpen ? "" : "hidden"
+          )}
+        >
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full items-center gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            className="flex h-full flex-col gap-6 md:flex-row md:items-center [&>li:nth-child(n+3):nth-child(-n+5)]:hidden [&>li:nth-child(n+3):nth-child(-n+5)]:lg:block [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>
@@ -41,13 +52,20 @@ export const Header = () => {
           </ul>
         </nav>
         <div className="ml-auto flex h-full items-center gap-5">
-          <Link href="#" className="text-sm transition-colors hover:text-grey">
+          <Link
+            href="#"
+            className="text-sm transition-colors  hover:text-grey "
+          >
             Login
           </Link>
           <Button href="#">Signup</Button>
         </div>
 
-        <button className="text-white">
+        <button
+          className="ml-6 md:hidden"
+          onClick={() => sethamburgetMenuIsOpen((open) => !open)}
+        >
+          <span className="sr-only">Open Site Navigation Menu</span>
           <HamburgerIcon />
         </button>
       </Container>

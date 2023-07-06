@@ -7,11 +7,11 @@ export const Container = ({
 }: {
   children: React.ReactNode;
   className?: string;
-} & React.ComponentProps<'div'>) => {
+} & React.ComponentProps<"div">) => {
   return (
     <div
       className={classNames(
-        "w-[min(100vw-30px,1200px)] [margin-inline:auto]",
+        "w-[min(100%-var(--gutter),1200px)] [margin-inline:auto]",
         className
       )}
       {...props}
