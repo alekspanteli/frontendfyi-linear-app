@@ -12,8 +12,8 @@ export const Header = () => {
   const [hamburgetMenuIsOpen, sethamburgetMenuIsOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 top-0 w-full ">
-      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08 backdrop-blur-[12px]">
+    <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
+      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08 ">
         <Link href="/">
           <Logo className="mr-6" />
         </Link>
