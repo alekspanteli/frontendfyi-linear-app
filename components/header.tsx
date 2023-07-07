@@ -19,7 +19,7 @@ export const Header = () => {
         </Link>
         <nav
           className={classNames(
-            "fixed  left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
+            "fixed  left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-red md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
             hamburgetMenuIsOpen ? "" : "hidden"
           )}
         >
@@ -65,7 +65,7 @@ export const Header = () => {
           className="ml-6 md:hidden"
           onClick={() => sethamburgetMenuIsOpen((open) => !open)}
         >
-          <span className="sr-only">Open Site Navigation Menu</span>
+          <span className="sr-only">Toggle Site Navigation Menu</span>
           <HamburgerIcon />
         </button>
       </Container>
