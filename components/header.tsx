@@ -19,14 +19,14 @@ export const Header = () => {
         </Link>
         <nav
           className={classNames(
-            "fixed  left-[calc(-1*var(--gutter)/2)] top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-screen flex-1 overflow-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
+            "fixed  left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
             hamburgetMenuIsOpen ? "" : "hidden"
           )}
         >
           <ul
             role="list"
             aria-label="Navigation"
-            className="flex h-full flex-col gap-6 md:flex-row md:items-center [&>li:nth-child(n+3):nth-child(-n+5)]:hidden [&>li:nth-child(n+3):nth-child(-n+5)]:lg:block [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            className="flex h-full flex-col gap-6 md:flex-row md:items-center [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
           >
             <li>
               <Link href="#">Features</Link>

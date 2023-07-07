@@ -28,6 +28,7 @@ const themeConfig = {
       current: "currentColor",
       "text-inherit": "inherit",
       transparent: "transparent",
+      red: "red",
     },
     backgroundImage: {
       "primary-gradient":
