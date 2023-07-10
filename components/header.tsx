@@ -9,7 +9,8 @@ import { useState } from "react";
 import classNames from "classnames";
 
 export const Header = () => {
-  const [hamburgetMenuIsOpen, sethamburgetMenuIsOpen] = useState(false);
+  const [hamburgerMenuIsOpen, sethamburgerMenuIsOpen] =
+    useState<boolean>(false);
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
@@ -19,14 +20,19 @@ export const Header = () => {
         </Link>
         <nav
           className={classNames(
-            "fixed  left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-red md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
-            hamburgetMenuIsOpen ? "" : "hidden"
+            "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto",
+            "bg-background md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
+            hamburgerMenuIsOpen || "hidden"
           )}
         >
           <ul
             role="list"
-            aria-label="Navigation"
-            className="flex h-full flex-col gap-6 md:flex-row md:items-center [&>li:nth-child(n+3):nth-child(-n+5)]:max-lg:hidden [&_a:hover]:text-grey [&_a]:text-sm [&_a]:transition-colors"
+            aria-label="Main"
+            className={classNames(
+              "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] md:flex-row md:items-center md:gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:md:hidden ",
+              "[&>li:nth-child(n+3):nth-child(-n+5)]:lg:flex [&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height]",
+              "[&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-colors md:[&_a]:text-sm "
+            )}
           >
             <li>
               <Link href="#">Features</Link>
@@ -63,7 +69,7 @@ export const Header = () => {
 
         <button
           className="ml-6 md:hidden"
-          onClick={() => sethamburgetMenuIsOpen((open) => !open)}
+          onClick={() => sethamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
         >
           <span className="sr-only">Toggle Site Navigation Menu</span>
           <HamburgerIcon />
