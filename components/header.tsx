@@ -5,13 +5,32 @@ import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Logo } from "@/icons/logo";
 import { HamburgerIcon } from "@/icons/hamburger";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 // import classNames from "classnames";
 
 export const Header = () => {
-  const [hamburgerMenuIsOpen, sethamburgerMenuIsOpen] =
+  const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] =
     useState<boolean>(false);
+
+  useEffect(() => {
+    let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+
+    const handleResize = () => {
+      setHamburgerMenuIsOpen(false);
+      document.body.classList.add("resize-animation-stopper");
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        document.body.classList.remove("resize-animation-stopper");
+      }, 400);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
@@ -19,16 +38,17 @@ export const Header = () => {
         <Link className="" href="/">
           <Logo className="mr-6" />
         </Link>
-        <div className={twMerge("transition-[visibility] md:visible", hamburgerMenuIsOpen
-                ? "visible"
-                : "invisible delay-500")}>
+        <div
+          className={twMerge(
+            "transition-[visibility] md:visible",
+            hamburgerMenuIsOpen ? "visible" : "invisible delay-500"
+          )}
+        >
           <nav
             className={twMerge(
-              "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
+              "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))]  w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
               "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100 md:transition-none",
-              hamburgerMenuIsOpen
-                ? "opacity-100"
-                : "opacity-0"
+              hamburgerMenuIsOpen ? "opacity-100" : "opacity-0"
             )}
           >
             <ul
@@ -78,7 +98,7 @@ export const Header = () => {
 
         <button
           className="ml-6 md:hidden"
-          onClick={() => sethamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
+          onClick={() => setHamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
         >
           <span className="sr-only">Toggle Site Navigation Menu</span>
           <HamburgerIcon />
