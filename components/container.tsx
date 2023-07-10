@@ -11,7 +11,7 @@ export const Container = ({
   return (
     <div
       className={classNames(
-        "w-[min(100%-var(--gutter),1200px)] [margin-inline:auto]",
+        "w-[min(100%-var(--gutter),1200px)] [margin-inline:auto]  ",
         className
       )}
       {...props}
