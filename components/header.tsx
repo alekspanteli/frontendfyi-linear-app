@@ -45,6 +45,7 @@ export const Header = () => {
           )}
         >
           <nav
+          aria-label="Site Navigation"
             className={twMerge(
               "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))]  w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
               "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100 md:transition-none",
@@ -62,27 +63,19 @@ export const Header = () => {
                 "md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm"
               )}
             >
-              <li>
-                <Link href="#">Features</Link>
-              </li>
-              <li>
-                <Link href="#">Method</Link>
-              </li>
-              <li>
-                <Link href="#">Customers</Link>
-              </li>
-              <li>
-                <Link href="#">Changelog</Link>
-              </li>
-              <li>
-                <Link href="#">Integrations</Link>
-              </li>
-              <li>
-                <Link href="#">Pricing</Link>
-              </li>
-              <li>
-                <Link href="#">Company </Link>
-              </li>
+              {[
+                { title: "Features", href: "#" },
+                { title: "Method", href: "#" },
+                { title: "Customers", href: "#" },
+                { title: "Changelog", href: "#" },
+                { title: "Integrations", href: "#" },
+                { title: "Pricing", href: "#" },
+                { title: "Company", href: "#" },
+              ].map(({ title, href }) => (
+                <li key={title}>
+                  <Link href={href}>{title}</Link>
+                </li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -100,7 +93,7 @@ export const Header = () => {
           className="ml-6 md:hidden"
           onClick={() => setHamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
         >
-          <span className="sr-only">Toggle Site Navigation Menu</span>
+          <span className="sr-only">{hamburgerMenuIsOpen ? "Close" : "Open"} Site Navigation Menu</span>
           <HamburgerIcon />
         </button>
       </Container>
