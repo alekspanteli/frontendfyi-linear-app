@@ -4,9 +4,9 @@ import Link from "next/link";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Logo } from "@/icons/logo";
-import { HamburgerIcon } from "./hamburger";
+import { HamburgerIcon } from "@/icons/hamburger";
 import { useState } from "react";
-import classNames from "classnames";
+import { twMerge } from "tailwind-merge";
 
 export const Header = () => {
   const [hamburgerMenuIsOpen, sethamburgerMenuIsOpen] =
@@ -19,19 +19,21 @@ export const Header = () => {
           <Logo className="mr-6" />
         </Link>
         <nav
-          className={classNames(
-            "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto",
-            "bg-background md:static md:top-auto md:block md:h-auto md:w-full md:bg-transparent",
-            hamburgerMenuIsOpen || "hidden"
+          className={twMerge(
+            "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background",
+            "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent",
+            hamburgerMenuIsOpen ? "" : "hidden"
           )}
         >
           <ul
             role="list"
             aria-label="Main"
-            className={classNames(
-              "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] md:flex-row md:items-center md:gap-6 [&>li:nth-child(n+3):nth-child(-n+5)]:md:hidden ",
-              "[&>li:nth-child(n+3):nth-child(-n+5)]:lg:flex [&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height]",
-              "[&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-colors md:[&_a]:text-sm "
+            className={twMerge(
+              "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] ",
+              "[&>li:nth-child(n+3):nth-child(-n+5)]:md:hidden [&>li:nth-child(n+3):nth-child(-n+5)]:lg:flex",
+              "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-colors [&_li]:border-b",
+              "[&_li]:border-grey-dark [&_li]:md:border-none",
+              "md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm"
             )}
           >
             <li>

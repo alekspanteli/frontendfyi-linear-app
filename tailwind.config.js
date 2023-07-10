@@ -19,7 +19,10 @@ const themeConfig = {
       background: "rgb(var(--background))",
       white: "rgb(var(--white))",
       "white-a08": "rgb(var(--white) / .08)",
-      grey: "rgb(var(--grey))",
+      grey: {
+        DEFAULT: "rgb(var(--grey))",
+        "dark":  "rgb(var(--grey-dark))",
+      },
       accent: {
         300: "rgb(var(--accent-300))",
         500: "rgb(var(--accent-500))",
