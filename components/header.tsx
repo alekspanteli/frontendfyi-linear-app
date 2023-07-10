@@ -13,8 +13,8 @@ export const Header = () => {
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
-      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08 ">
-        <Link href="/">
+      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08">
+        <Link className="" href="/">
           <Logo className="mr-6" />
         </Link>
         <nav
