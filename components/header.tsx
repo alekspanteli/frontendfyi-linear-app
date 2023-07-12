@@ -38,21 +38,18 @@ export const Header = () => {
         <Link className="" href="/">
           <Logo className="mr-6" />
         </Link>
-        <div
-          className={twMerge(
-            "transition-[visibility] md:visible",
-            hamburgerMenuIsOpen ? "visible" : "invisible delay-500"
-          )}
+        <nav
+          aria-label="Site Navigation"
+          id="navigation-menu"
+          data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
+          className="group transition-[visibility] data-[state='open']:visible data-[state='closed']:invisible data-[state='closed']:delay-500 md:visible"
         >
-          <nav
-            aria-label="Site Navigation"
+          <div
             className={twMerge(
-              "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))]  w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
-              "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100 md:transition-none",
-              hamburgerMenuIsOpen ? "opacity-100" : "opacity-0"
+              "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
+              "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100",
+              "group-data-[state='closed']:opacity-0 group-data-[state='open']:opacity-100"
             )}
-            data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
-            id="navigation-menu"
           >
             <ul
               role="list"
@@ -79,13 +76,10 @@ export const Header = () => {
                 </li>
               ))}
             </ul>
-          </nav>
-        </div>
+          </div>
+        </nav>
         <div className="ml-auto flex h-full items-center gap-5">
-          <Link
-            href="#"
-            className="text-sm transition-colors  hover:text-grey "
-          >
+          <Link href="#" className="text-sm transition-colors hover:text-grey ">
             Login
           </Link>
           <Button href="#">Signup</Button>
@@ -99,6 +93,7 @@ export const Header = () => {
             hamburgerMenuIsOpen ? "Close" : "Open"
           } Site Navigation Menu`}
           data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
+          aria-expanded={hamburgerMenuIsOpen}
         >
           <HamburgerIcon aria-hidden="true" />
         </button>
