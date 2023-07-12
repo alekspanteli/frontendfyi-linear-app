@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 function px(pixels) {
   return `${pixels / 16}rem`;
 }
@@ -64,7 +66,11 @@ const themeConfig = {
       primary: "rgb(80 63 205 / 0.5) 0px 1px 40px",
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ addVariant }) {
+      addVariant('nth-2-4', '&>li:nth-child(n+3):nth-child(-n+5)')
+    })
+  ]
 };
 
 export default themeConfig;
