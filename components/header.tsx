@@ -56,7 +56,7 @@ export const Header = () => {
               aria-label="Main"
               className={twMerge(
                 "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] ",
-                "nth-2-4:md:hidden nth-2-4:lg:flex",
+                "nth-3-5:[&>li]:md:hidden nth-3-5:[&>li]:lg:flex",
                 "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-colors [&_li]:border-b",
                 "[&_li]:border-grey-dark [&_li]:md:border-none",
                 "md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm"

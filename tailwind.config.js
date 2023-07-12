@@ -68,7 +68,7 @@ const themeConfig = {
   },
   plugins: [
     plugin(function({ addVariant }) {
-      addVariant('nth-2-4', '&>li:nth-child(n+3):nth-child(-n+5)')
+      addVariant('nth-3-5', '&:nth-child(n+3):nth-child(-n+5)')
     })
   ]
 };
