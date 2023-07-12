@@ -1,6 +1,6 @@
 import "./globals.css";
 import { Inter, Roboto_Mono } from "next/font/google";
-import { Container } from "@/components/container";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 
 const inter = Inter({
@@ -33,9 +33,7 @@ export default function RootLayout({
       <body className="resize-animation-stopper">
         <Header />
         <main className="pt-[--navbar-height]">{children}</main>
-        <footer>
-          <Container>footer</Container>
-        </footer>
+        <Footer />
       </body>
     </html>
   );

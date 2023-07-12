@@ -19,8 +19,9 @@ const themeConfig = {
     },
     colors: {
       background: "rgb(var(--background))",
-      white: "rgb(var(--white))",
-      "white-a08": "rgb(var(--white) / .08)",
+      white: {
+        DEFAULT: "rgb(var(--white))",
+      },
       grey: {
         DEFAULT: "rgb(var(--grey))",
         "dark":  "rgb(var(--grey-dark))",
