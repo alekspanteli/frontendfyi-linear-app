@@ -53,7 +53,6 @@ export const Header = () => {
           >
             <ul
               role="list"
-              aria-label="Main"
               className={twMerge(
                 "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] ",
                 "nth-3-5:[&>li]:md:hidden nth-3-5:[&>li]:lg:flex",
