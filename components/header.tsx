@@ -53,7 +53,6 @@ export const Header = () => {
             )}
             data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
             id="navigation-menu"
-            aria-expanded={hamburgerMenuIsOpen}
           >
             <ul
               role="list"
