@@ -34,7 +34,7 @@ export const Header = () => {
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
-      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08">
+      <Container className="relative flex h-[--navbar-height] items-center border-b border-white-a08 ">
         <Link className="" href="/">
           <Logo className="mr-6" />
         </Link>
@@ -45,12 +45,15 @@ export const Header = () => {
           )}
         >
           <nav
-          aria-label="Site Navigation"
+            aria-label="Site Navigation"
             className={twMerge(
               "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))]  w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
               "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:opacity-100 md:transition-none",
               hamburgerMenuIsOpen ? "opacity-100" : "opacity-0"
             )}
+            data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
+            id="navigation-menu"
+            aria-expanded={hamburgerMenuIsOpen}
           >
             <ul
               role="list"
@@ -90,11 +93,15 @@ export const Header = () => {
         </div>
 
         <button
+          aria-controls="navigation-menu"
           className="ml-6 md:hidden"
           onClick={() => setHamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
+          aria-label={`${
+            hamburgerMenuIsOpen ? "Close" : "Open"
+          } Site Navigation Menu`}
+          data-state={`${hamburgerMenuIsOpen ? "open" : "closed"}`}
         >
-          <span className="sr-only">{hamburgerMenuIsOpen ? "Close" : "Open"} Site Navigation Menu</span>
-          <HamburgerIcon />
+          <HamburgerIcon aria-hidden="true" />
         </button>
       </Container>
     </header>
