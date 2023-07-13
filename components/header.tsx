@@ -59,7 +59,7 @@ export const Header = () => {
                 "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-[color,transform] ",
                 "[&_a]:translate-y-8 [&_a]:duration-300 [&_a]:group-data-[state='open']:translate-y-0 md:[&_a]:translate-y-0",
                 "[&_li]:border-b [&_li]:border-grey-dark [&_li]:md:border-none",
-                "ease-in md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm",
+                "ease-in md:flex-row md:items-center md:gap-6  md:[&_a]:text-sm",
               )}
             >
               {[
