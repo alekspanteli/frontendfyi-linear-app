@@ -48,18 +48,18 @@ export const Header = () => {
             className={twMerge(
               "fixed left-0 top-[--navbar-height] h-[calc(100vh_-_var(--navbar-height))] w-full flex-1 overflow-y-auto bg-background transition-opacity duration-500",
               "md:static md:top-auto md:block md:h-auto md:w-auto md:bg-transparent md:!opacity-100",
-              "group-data-[state='closed']:opacity-0 group-data-[state='open']:opacity-100"
+              "group-data-[state='closed']:opacity-0 group-data-[state='open']:opacity-100",
             )}
           >
             <ul
               role="list"
               className={twMerge(
-                "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)] ",
+                "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)]",
                 "nth-3-5:[&>li]:md:hidden nth-3-5:[&>li]:lg:flex",
                 "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-[color,transform] ",
-                "[&_a]:duration-300 [&_a]:translate-y-8 [&_a]:group-data-[state='open']:translate-y-0 md:[&_a]:translate-y-0",
+                "[&_a]:translate-y-8 [&_a]:duration-300 [&_a]:group-data-[state='open']:translate-y-0 md:[&_a]:translate-y-0",
                 "[&_li]:border-b [&_li]:border-grey-dark [&_li]:md:border-none",
-                "md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm ease-in"
+                "ease-in md:flex-row md:items-center md:gap-6 md:[&_a]:text-sm",
               )}
             >
               {[
