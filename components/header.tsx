@@ -13,6 +13,8 @@ export const Header = () => {
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] =
     useState<boolean>(false);
 
+  const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
+
   useEffect(() => {
     let resizeTimer: ReturnType<typeof setTimeout> | undefined;
 
@@ -25,12 +27,19 @@ export const Header = () => {
       }, 400);
     };
 
-    window.addEventListener("resize", handleResize);
+    if (!isFirstLoad) {
+      window.addEventListener("resize", handleResize);
+      document.body.classList.remove("resize-animation-stopper");
+      console.log(isFirstLoad);
+    } else {
+      setIsFirstLoad(false);
+      console.log(isFirstLoad);
+    }
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isFirstLoad]);
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
@@ -54,7 +63,7 @@ export const Header = () => {
             <ul
               role="list"
               className={twMerge(
-                "flex h-full flex-col max-lg:px-[calc(var(--gutter)/2)]",
+                "flex h-full flex-col max-md:px-[calc(var(--gutter)/2)]",
                 "nth-3-5:[&>li]:md:hidden nth-3-5:[&>li]:lg:flex",
                 "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-[color,transform] ",
                 "[&_a]:translate-y-8 [&_a]:duration-300 [&_a]:group-data-[state='open']:translate-y-0 md:[&_a]:translate-y-0",
@@ -63,7 +72,7 @@ export const Header = () => {
               )}
             >
               {[
-                { title: "Features", href: "#" },
+                { title: "Features", href: "/about" },
                 { title: "Method", href: "#" },
                 { title: "Customers", href: "#" },
                 { title: "Changelog", href: "#" },
@@ -87,7 +96,7 @@ export const Header = () => {
 
         <button
           aria-controls="navigation-menu"
-          className="ml-6 md:hidden"
+          className="ml-3 md:hidden"
           onClick={() => setHamburgerMenuIsOpen(!hamburgerMenuIsOpen)}
           aria-label={`${
             hamburgerMenuIsOpen ? "Close" : "Open"
