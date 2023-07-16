@@ -14,10 +14,6 @@
     --grey: 138 143 152;
     --grey-dark: 34 35 38;
   }
-  .resize-animation-stopper * {
-    animation: none !important;
-    transition: none !important;
-  }
 }
 
 @layer components {
@@ -29,5 +25,9 @@
   }
   .text-shadow {
     text-shadow: rgb(0 0 0 / 0.56) 0px 3px 12px;
+  }
+  .resize-animation-stopper * {
+    animation: none !important;
+    transition: none !important;
   }
 }

@@ -30,7 +30,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${roboto_mono.variable} bg-background text-white`}
     >
-      <body className="resize-animation-stopper">
+      <body>
         <Header />
         <main className="pt-[--navbar-height]">{children}</main>
         <Footer />

@@ -7,13 +7,10 @@ import { Logo } from "@/icons/logo";
 import { HamburgerIcon } from "@/icons/hamburger";
 import { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
-// import classNames from "classnames";
 
 export const Header = () => {
   const [hamburgerMenuIsOpen, setHamburgerMenuIsOpen] =
     useState<boolean>(false);
-
-  const [isFirstLoad, setIsFirstLoad] = useState<boolean>(true);
 
   useEffect(() => {
     let resizeTimer: ReturnType<typeof setTimeout> | undefined;
@@ -27,19 +24,8 @@ export const Header = () => {
       }, 400);
     };
 
-    if (!isFirstLoad) {
-      window.addEventListener("resize", handleResize);
-      document.body.classList.remove("resize-animation-stopper");
-      console.log(isFirstLoad);
-    } else {
-      setIsFirstLoad(false);
-      console.log(isFirstLoad);
-    }
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, [isFirstLoad]);
+    window.addEventListener("resize", handleResize);
+  }, []);
 
   return (
     <header className="fixed left-0 top-0 w-full backdrop-blur-[12px]">
