@@ -13,7 +13,7 @@ export const Header = () => {
     useState<boolean>(false);
 
   useEffect(() => {
-    let resizeTimer: ReturnType<typeof setTimeout> | undefined;
+    let resizeTimer: ReturnType<typeof setTimeout>;
 
     const handleResize = () => {
       setHamburgerMenuIsOpen(false);
