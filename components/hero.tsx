@@ -8,7 +8,7 @@ interface HeroElementProps {
 
 export const HeroTitle = ({ children }: HeroElementProps) => {
   return (
-    <h1 className="text-balance mx-auto my-6 max-w-[18ch] text-5xl/none">
+    <h1 className="[text-wrap:balance] mx-auto my-6 max-w-[18ch] text-5xl/none">
       {children}
     </h1>
   );
@@ -16,7 +16,7 @@ export const HeroTitle = ({ children }: HeroElementProps) => {
 
 export const HeroSubtitle = ({ children }: HeroElementProps) => {
   return (
-    <p className="text-balance mx-auto mb-12 max-w-[70ch] text-lg/[1.3]">
+    <p className="[text-wrap:balance] mx-auto mb-12 max-w-[70ch] text-lg/[1.3]">
       {children}
     </p>
   );

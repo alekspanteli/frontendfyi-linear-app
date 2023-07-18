@@ -20,9 +20,6 @@
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
   .text-shadow {
     text-shadow: rgb(0 0 0 / 0.56) 0px 3px 12px;
   }
