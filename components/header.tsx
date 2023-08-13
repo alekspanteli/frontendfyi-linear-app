@@ -79,7 +79,7 @@ export const Header = () => {
           </div>
         </nav>
         <div className="ml-auto flex h-full items-center gap-5">
-          <Link href="#" className="text-sm transition-colors hover:text-grey ">
+          <Link href="#" className="text-sm transition-colors hover:text-grey">
             Login
           </Link>
           <Button href="#">Signup</Button>
