@@ -14,7 +14,9 @@ export const Container = ({
         "w-[min(100%-var(--gutter),1200px)] [margin-inline:auto]",
         className
       )}
-      {...props}
+
+
+                               {...props}
     >
       {children}
     </div>
