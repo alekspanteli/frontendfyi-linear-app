@@ -13,7 +13,7 @@ export default function Homepage() {
     <>
       <Container>
         <Hero>
-          <HeroTitle>Linear is a better way to build products</HeroTitle>
+          <HeroTitle>Linear!!! is a better way to build products</HeroTitle>
           <HeroSubtitle>
             Meet the new standard for modern software development. Streamline
             issues, sprints, and product roadmaps.
