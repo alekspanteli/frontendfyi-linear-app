@@ -55,7 +55,7 @@ export const Header = () => {
               role="list"
               className={twMerge(
                 "flex h-full flex-col max-md:px-[calc(var(--gutter)/2)]",
-                "nth-3-5:[&>li]:md:hidden nth-3-5:[&>li]:lg:flex",
+                "md:[&>li:nth-child(n+3):nth-child(-n+5)]:hidden lg:[&>li:nth-child(n+3):nth-child(-n+5)]:flex",
                 "[&_a:hover]:text-grey [&_a]:flex [&_a]:h-[--navbar-height] [&_a]:w-full [&_a]:items-center [&_a]:text-md [&_a]:transition-[color,transform] ",
                 "[&_a]:translate-y-8 [&_a]:duration-300 [&_a]:group-data-[state='open']:translate-y-0 md:[&_a]:translate-y-0",
                 "[&_li]:border-b [&_li]:border-grey-dark [&_li]:md:border-none",

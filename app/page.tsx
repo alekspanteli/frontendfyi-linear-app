@@ -18,7 +18,13 @@ export default function Homepage() {
             Meet the new standard for modern software development. Streamline
             issues, sprints, and product roadmaps.
           </HeroSubtitle>
-          <Image src={heroImg} alt="Picture of the author" priority />
+          <Image
+            src={heroImg}
+            alt="Linear dashboard showcasing issue tracking UI"
+            priority
+            placeholder="blur"
+            sizes="(min-width: 1280px) 640px, (min-width: 768px) 70vw, 92vw"
+          />
         </Hero>
       </Container>
     </>
